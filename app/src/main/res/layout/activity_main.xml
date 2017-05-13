@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.admin.healthapp.MainActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Patient ID"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp"
+        android:id="@+id/editText_patient_id" />
+
+    <Button
+        android:text="See Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText_patient_id"
+        android:layout_alignLeft="@+id/editText_patient_id"
+        android:layout_alignStart="@+id/editText_patient_id"
+        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="23dp"
+        android:id="@+id/button_see_patient_result" />
+
+    <TextView
+        android:text="Patient Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_see_patient_result"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="53dp"
+        android:id="@+id/p_name"
+        android:width="250dp"
+        android:height="30dp"/>
+
+    <TextView
+        android:text="Temperature:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/p_name"
+        android:layout_alignStart="@+id/p_name"
+        android:id="@+id/textView12"
+        android:width="100dp"
+        android:height="30dp"/>
+
+    <TextView
+        android:text="In Celcius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textView12"
+        android:layout_toEndOf="@+id/textView12"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:id="@+id/p_temp"
+        android:width="100dp"
+        android:height="30dp"/>
+
+    <TextView
+        android:text="BPM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView14"
+        android:layout_alignLeft="@+id/p_temp"
+        android:layout_alignStart="@+id/p_temp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:id="@+id/p_pulse"
+        android:width="100dp"
+        android:height="30dp"/>
+
+    <TextView
+        android:text="Fall Position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/p_pulse"
+        android:layout_alignStart="@+id/p_pulse"
+        android:id="@+id/p_fall"
+        android:width="100dp"
+        android:height="30dp"/>
+
+    <TextView
+        android:text="Fall Detection:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:height="30dp"
+        android:width="100dp"
+        android:layout_below="@+id/textView14"
+        android:layout_alignLeft="@+id/textView14"
+        android:layout_alignStart="@+id/textView14"
+        android:layout_marginTop="41dp" />
+
+    <TextView
+        android:text="Pulse Rate:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:id="@+id/textView14"
+        android:width="100dp"
+        android:height="30dp"
+        android:layout_below="@+id/textView12"
+        android:layout_alignLeft="@+id/textView12"
+        android:layout_alignStart="@+id/textView12" />
+</RelativeLayout>
