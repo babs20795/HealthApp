@@ -1,13 +1,17 @@
 package com.example.admin.healthapp;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatSpinner;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -27,6 +31,7 @@ public class Login_Activity extends AppCompatActivity {
 
     RadioGroup rg;
 
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,37 +39,40 @@ public class Login_Activity extends AppCompatActivity {
 
 
 
+
+
         b1=(Button)findViewById(R.id.button_login);
 
-        /*e1=(EditText)findViewById(R.id.editText_unm);
+        e1=(EditText)findViewById(R.id.editText_unm);
         e2=(EditText)findViewById(R.id.editText_pass);
 
 
 
         rg=(RadioGroup)findViewById(R.id.radioGroup);
 
-        int selectedId = rg.getCheckedRadioButtonId();
 
-        // find the radiobutton by returned id
-        radioButton = (RadioButton) findViewById(selectedId);
 
-        Toast.makeText(Login_Activity.this,
-                radioButton.getText(), Toast.LENGTH_SHORT).show();
-
-        /* admin=(RadioButton)findViewById(R.id.admin);
-        doctor=(RadioButton)findViewById(R.id.doctor);
-        relative=(RadioButton)findViewById(R.id.relatives);
-*/
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent i=new Intent(Login_Activity.this,MainActivity.class);
+               /* Intent i=new Intent(Login_Activity.this,MainActivity.class);
                 startActivity(i);
-                finish();
-               /* String unm=e1.getText().toString();
+                finish();*/
+                String unm=e1.getText().toString();
                 String pass=e2.getText().toString();
 
+                progressDialog = new ProgressDialog(Login_Activity.this);
+
+                progressDialog.setMessage("Please wait...");
+
+                progressDialog.show();
+
+
+                int selectedId = rg.getCheckedRadioButtonId();
+
+                // find the radiobutton by returned id
+                radioButton = (RadioButton) findViewById(selectedId);
 
                 Response.Listener listener = new Response.Listener<String>() {
 
@@ -74,23 +82,35 @@ public class Login_Activity extends AppCompatActivity {
                         try{
 
                             Log.d("response",response);
-                            JSONObject j=new JSONObject(response);
-                            success=j.getString("result");
+                           // Toast.makeText(Login_Activity.this,""+response,Toast.LENGTH_LONG).show();
 
-                            if (success.equals("fail")){
-                                AlertDialog.Builder builder=new AlertDialog.Builder(Login_Activity.this);
-                                builder.setMessage("Login fail")
-                                        .setNegativeButton("Retry",null)
-                                        .create()
-                                        .show();
+
+
+                            JSONObject j=new JSONObject(response);
+                            success=j.getString("success");
+
+                            if (success.equals("true")){
+                                progressDialog.dismiss();
+
+                                String relative_id=j.getString("relatives_id");
+                                Intent i=new Intent(Login_Activity.this,MainActivity.class);
+                                i.putExtra("relative_id",relative_id);
+                                startActivity(i);
                             }
                             else
                             {
-                                JSONObject js=new JSONObject(success);
-                                //Intent i = new Intent(MainActivity.this, Result.class);
-                                //startActivity(i);
+                                progressDialog.dismiss();
+                                AlertDialog.Builder al=new AlertDialog.Builder(Login_Activity.this);
+                                al.setMessage("Login fail ! Please check username and password...")
+                                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.dismiss();
+                                            }
+                                        })
+                                .show();
 
-                                Toast.makeText(getApplicationContext(),"Temp="+js.getString("temp")+"\nPulse="+js.getString("pulse"),Toast.LENGTH_SHORT).show();
+
 
                             }
 
@@ -99,14 +119,9 @@ public class Login_Activity extends AppCompatActivity {
                     }
                 };
 
-                login loginRequest=new login(unm,pass,listener);
+                login loginRequest=new login(unm,pass,radioButton.getText().toString(),listener);
                 RequestQueue requestQueue= Volley.newRequestQueue(Login_Activity.this);
                 requestQueue.add(loginRequest);
-
-
-        //xbjdcjhdjhbj*/
-
-
             }
         });
 

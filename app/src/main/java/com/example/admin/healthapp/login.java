@@ -17,7 +17,7 @@ public class login extends StringRequest implements DBRsources {
 
     private Map<String,String> params;
 
-    public login(String unm,String pass,Response.Listener<String> listener){
+    public login(String unm,String pass,String role,Response.Listener<String> listener){
         super(Method.POST,LOGIN_REQUEST,listener,
                 new Response.ErrorListener() {
                     @Override
@@ -29,9 +29,9 @@ public class login extends StringRequest implements DBRsources {
                 }
         );
         params=new HashMap<>();
-        params.put("unm",unm);
-        params.put("pass",pass);
-
+        params.put("login_id",unm);
+        params.put("password",pass);
+        params.put("role",role);
     }
 
     @Override

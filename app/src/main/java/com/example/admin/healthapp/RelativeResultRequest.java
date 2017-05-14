@@ -13,12 +13,12 @@ import java.util.Map;
  * Created by admin on 08/03/2017.
  */
 
-public class ResultRequest extends StringRequest implements DBRsources {
+public class RelativeResultRequest extends StringRequest implements DBRsources {
 
     private Map<String,String> params;
 
-    public ResultRequest(String p_id, Response.Listener<String> listener){
-        super(Method.POST,LOGIN_REQUEST,listener,
+    public RelativeResultRequest(String relatives_id, Response.Listener<String> listener){
+        super(Method.POST,RELATIVE_PATIENT,listener,
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error)
@@ -29,7 +29,7 @@ public class ResultRequest extends StringRequest implements DBRsources {
                 }
         );
         params=new HashMap<>();
-        params.put("p_id",p_id);
+        params.put("relatives_id",relatives_id);
 
     }
 

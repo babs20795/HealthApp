@@ -50,7 +50,7 @@
             android:id="@+id/relatives"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Relative"
+            android:text="Relatives"
             android:layout_marginLeft="20dp"
             android:textSize="15sp" />
 
