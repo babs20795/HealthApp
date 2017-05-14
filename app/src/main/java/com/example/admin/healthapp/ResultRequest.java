@@ -13,11 +13,11 @@ import java.util.Map;
  * Created by admin on 08/03/2017.
  */
 
-public class LoginRequest extends StringRequest implements DBRsources {
+public class ResultRequest extends StringRequest implements DBRsources {
 
     private Map<String,String> params;
 
-    public LoginRequest(String p_id,Response.Listener<String> listener){
+    public ResultRequest(String p_id, Response.Listener<String> listener){
         super(Method.POST,LOGIN_REQUEST,listener,
                 new Response.ErrorListener() {
                     @Override

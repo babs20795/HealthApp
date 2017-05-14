@@ -23,7 +23,7 @@ public class FlashActivity extends AppCompatActivity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(FlashActivity.this, MainActivity.class);
+                Intent i = new Intent(FlashActivity.this, Login_Activity.class);
                 startActivity(i);
 
                 // close this activity

@@ -1,5 +1,6 @@
 package com.example.admin.healthapp;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,11 +32,14 @@ public class Login_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        e1=(EditText)findViewById(R.id.editText_unm);
-        e2=(EditText)findViewById(R.id.editText_pass);
+
 
         b1=(Button)findViewById(R.id.button_login);
-        b2=(Button)findViewById(R.id.button_clear);
+
+        /*e1=(EditText)findViewById(R.id.editText_unm);
+        e2=(EditText)findViewById(R.id.editText_pass);
+
+
 
         rg=(RadioGroup)findViewById(R.id.radioGroup);
 
@@ -55,7 +59,10 @@ public class Login_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String unm=e1.getText().toString();
+                Intent i=new Intent(Login_Activity.this,MainActivity.class);
+                startActivity(i);
+                finish();
+               /* String unm=e1.getText().toString();
                 String pass=e2.getText().toString();
 
 
@@ -97,7 +104,7 @@ public class Login_Activity extends AppCompatActivity {
                 requestQueue.add(loginRequest);
 
 
-        //xbjdcjhdjhbj
+        //xbjdcjhdjhbj*/
 
 
             }
@@ -105,13 +112,6 @@ public class Login_Activity extends AppCompatActivity {
 
 
 
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                e1.setText("");
-                e2.setText("");
-            }
-        });
 
     }
 }
