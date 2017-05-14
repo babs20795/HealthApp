@@ -38,21 +38,23 @@
         android:layout_marginTop="32dp"
         android:orientation="horizontal"
         >
+        <RadioButton
+            android:id="@+id/relatives"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Relatives"
+            android:checked="true"
+
+            android:textSize="15sp" />
 
        <RadioButton
             android:id="@+id/doctor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Doctor"
+           android:layout_marginLeft="20dp"
             android:textSize="15sp" />
 
-        <RadioButton
-            android:id="@+id/relatives"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Relatives"
-            android:layout_marginLeft="20dp"
-            android:textSize="15sp" />
 
         />
     </RadioGroup>
