@@ -6,19 +6,17 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatSpinner;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.admin.healthapp.web.connector.login;
 
 import org.json.JSONObject;
 
@@ -91,11 +89,19 @@ public class Login_Activity extends AppCompatActivity {
 
                             if (success.equals("true")){
                                 progressDialog.dismiss();
+                                if (radioButton.getText().toString().equals("Relatives")) {
 
-                                String relative_id=j.getString("relatives_id");
-                                Intent i=new Intent(Login_Activity.this,MainActivity.class);
-                                i.putExtra("relative_id",relative_id);
-                                startActivity(i);
+                                    String relative_id = j.getString("relatives_id");
+                                    Intent i = new Intent(Login_Activity.this, MainActivity.class);
+                                    i.putExtra("relative_id", relative_id);
+                                    startActivity(i);
+                                }
+                                else{
+                                    String doctor_id = j.getString("doctor_id");
+                                    Intent i = new Intent(Login_Activity.this, PatientListActivity.class);
+                                    i.putExtra("doctor_id", doctor_id);
+                                    startActivity(i);
+                                }
                             }
                             else
                             {

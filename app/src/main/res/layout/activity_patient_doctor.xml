@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context="com.example.admin.healthapp.PatientDoctorActivity">
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Patient Name :" />
+
+    <TextView
+        android:id="@+id/p_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="abc"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Temperature :" />
+
+    <TextView
+        android:id="@+id/p_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="44"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Pulse Rate:" />
+
+    <TextView
+        android:id="@+id/p_pulse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="BPM"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Fall Detection:" />
+    <TextView
+        android:id="@+id/p_fall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Fall Position"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</LinearLayout>

@@ -9,25 +9,28 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.admin.healthapp.web.connector.PatientDetailsRequest;
 import com.example.admin.healthapp.web.connector.RelativeResultRequest;
 
 import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
+public class PatientDoctorActivity extends AppCompatActivity {
+
     String success;
     public static EditText e1;
     Button b1;
     TextView p_name,p_temp,p_pulse,p_fall,t1,t2,t3;
-    static String relative_id;
+    static String patient_id,doctor_id;
     Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_patient_doctor);
         setTitle("Patient Details");
 
         p_name=(TextView) findViewById(R.id.p_name);
@@ -37,26 +40,25 @@ public class MainActivity extends AppCompatActivity {
 
 
         Intent i=getIntent();
-        relative_id=i.getStringExtra("relative_id");
-        GetData(relative_id);
+        patient_id=i.getStringExtra("patient_id");
+        doctor_id=i.getStringExtra("doctor_id");
+        GetData(patient_id,doctor_id);
 
         handler=new Handler();
 
         handler.postDelayed(runnable,15000);
-
-
     }
 
     private final Runnable runnable=new Runnable() {
         @Override
         public void run() {
-            GetData(relative_id);
+            GetData(patient_id,doctor_id);
             handler.postDelayed(runnable,15000);
         }
     };
 
 
-    private void GetData(String relative_id){
+    private void GetData(String patient_id,String doctor_id){
 
 
         Response.Listener listener = new Response.Listener<String>() {
@@ -67,14 +69,14 @@ public class MainActivity extends AppCompatActivity {
                 try{
 
                     Log.d("response",response);
-                   // Toast.makeText(MainActivity.this,response,Toast.LENGTH_LONG).show();
+                     //Toast.makeText(PatientDoctorActivity.this,response,Toast.LENGTH_LONG).show();
 
                     JSONObject j=new JSONObject(response);
                     success=j.getString("success");
 
                     if (success.equals("true")){
 
-                      //  Toast.makeText(getApplicationContext(),"Temp="+j.getString("temp")+"\nPulse="+j.getString("pulse"),Toast.LENGTH_SHORT).show();
+                        //  Toast.makeText(getApplicationContext(),"Temp="+j.getString("temp")+"\nPulse="+j.getString("pulse"),Toast.LENGTH_SHORT).show();
                         p_temp.setText(j.getString("temp_cels"));
                         p_pulse.setText(j.getString("pulse"));
                         p_fall.setText(j.getString("accel"));
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     else
                     {
 
-                        AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                        AlertDialog.Builder builder=new AlertDialog.Builder(PatientDoctorActivity.this);
                         builder.setMessage("Login fail")
                                 .setNegativeButton("Retry",null)
                                 .create()
@@ -96,9 +98,9 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        RelativeResultRequest relativeResultRequest =new RelativeResultRequest(relative_id,listener);
-        RequestQueue requestQueue= Volley.newRequestQueue(MainActivity.this);
-        requestQueue.add(relativeResultRequest);
+        PatientDetailsRequest Request =new PatientDetailsRequest(patient_id,doctor_id,listener);
+        RequestQueue requestQueue= Volley.newRequestQueue(PatientDoctorActivity.this);
+        requestQueue.add(Request);
 
     }
 }

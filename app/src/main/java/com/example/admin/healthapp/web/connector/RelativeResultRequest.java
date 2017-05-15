@@ -1,4 +1,4 @@
-package com.example.admin.healthapp;
+package com.example.admin.healthapp.web.connector;
 
 import android.util.Log;
 
@@ -10,15 +10,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by admin on 10/03/2017.
+ * Created by admin on 08/03/2017.
  */
 
-public class login extends StringRequest implements DBRsources {
+public class RelativeResultRequest extends StringRequest implements DBRsources {
 
     private Map<String,String> params;
 
-    public login(String unm,String pass,String role,Response.Listener<String> listener){
-        super(Method.POST,LOGIN_REQUEST,listener,
+    public RelativeResultRequest(String relatives_id, Response.Listener<String> listener){
+        super(Method.POST,RELATIVE_PATIENT,listener,
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error)
@@ -29,17 +29,13 @@ public class login extends StringRequest implements DBRsources {
                 }
         );
         params=new HashMap<>();
-        params.put("login_id",unm);
-        params.put("password",pass);
-        params.put("role",role);
+        params.put("relatives_id",relatives_id);
+
     }
 
     @Override
     public Map<String, String> getParams() {
         return params;
     }
-
 }
-
-
 
