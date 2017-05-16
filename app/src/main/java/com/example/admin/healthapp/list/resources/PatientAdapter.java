@@ -67,8 +67,8 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.MyViewHo
         Patient patient=patientList.get(position);
         holder.patient_id.setText(patient.getPatient_id()+"");
         holder.name.setText(patient.getPatient_name());
-        holder.age.setText(patient.getParient_age());
-        holder.disease.setText(patient.getPatient_disease());
+        holder.age.setText("Age : "+patient.getParient_age());
+        holder.disease.setText("Disease : "+patient.getPatient_disease());
     }
 
     @Override
