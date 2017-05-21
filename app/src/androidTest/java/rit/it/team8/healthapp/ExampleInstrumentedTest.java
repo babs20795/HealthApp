@@ -1,4 +1,4 @@
-package com.example.admin.healthapp;
+package rit.it.team8.healthapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.admin.healthapp", appContext.getPackageName());
+        assertEquals("com.it.team8.healthapp", appContext.getPackageName());
     }
 }

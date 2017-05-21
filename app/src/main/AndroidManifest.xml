@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.admin.healthapp">
+    package="rit.it.team8.healthapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -15,9 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="rit.it.team8.healthapp.MainActivity"
             android:label="Health App" />
-        <activity android:name=".Result" />
+        <activity android:name="rit.it.team8.healthapp.Result" />
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -27,10 +27,10 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".Login_Activity"
+            android:name="rit.it.team8.healthapp.Login_Activity"
             android:label="Login" />
         <activity
-            android:name=".FlashActivity"
+            android:name="rit.it.team8.healthapp.FlashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,7 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PatientListActivity">
+        <activity android:name="rit.it.team8.healthapp.PatientListActivity">
 
             <!--
             <intent-filter>
@@ -49,7 +49,7 @@
             -->
 
         </activity>
-        <activity android:name=".PatientDoctorActivity"></activity>
+        <activity android:name="rit.it.team8.healthapp.PatientDoctorActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.admin.healthapp;
+package rit.it.team8.healthapp;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -16,7 +16,7 @@ import android.widget.RadioGroup;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.admin.healthapp.web.connector.login;
+import rit.it.team8.healthapp.web.connector.login;
 
 import org.json.JSONObject;
 

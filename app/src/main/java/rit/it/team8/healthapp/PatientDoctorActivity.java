@@ -1,4 +1,4 @@
-package com.example.admin.healthapp;
+package rit.it.team8.healthapp;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -9,13 +9,11 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.admin.healthapp.web.connector.PatientDetailsRequest;
-import com.example.admin.healthapp.web.connector.RelativeResultRequest;
+import rit.it.team8.healthapp.web.connector.PatientDetailsRequest;
 
 import org.json.JSONObject;
 

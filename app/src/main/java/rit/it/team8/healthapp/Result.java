@@ -1,9 +1,7 @@
-package com.example.admin.healthapp;
+package rit.it.team8.healthapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import com.example.admin.healthapp.R;
 
 public class Result extends AppCompatActivity {
 

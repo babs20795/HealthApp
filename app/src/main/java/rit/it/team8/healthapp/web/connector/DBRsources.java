@@ -1,4 +1,4 @@
-package com.example.admin.healthapp.web.connector;
+package rit.it.team8.healthapp.web.connector;
 
 /**
  * Created by Admin on 13-Sep-16.

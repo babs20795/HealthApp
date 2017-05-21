@@ -1,4 +1,4 @@
-package com.example.admin.healthapp.list.resources;
+package rit.it.team8.healthapp.list.resources;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -6,11 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
-import com.example.admin.healthapp.PatientDoctorActivity;
-import com.example.admin.healthapp.R;
+import rit.it.team8.healthapp.PatientDoctorActivity;
 
 import java.util.List;
 
@@ -32,10 +30,10 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.MyViewHo
 
         public MyViewHolder(final View view) {
             super(view);
-            patient_id = (TextView) view.findViewById(R.id.tvPatientId);
-            name= (TextView) view.findViewById(R.id.tvPatientName);
-            age = (TextView) view.findViewById(R.id.tvPatientAge);
-            disease = (TextView) view.findViewById(R.id.tvPatientDisease);
+            patient_id = (TextView) view.findViewById(rit.it.team8.healthapp.R.id.tvPatientId);
+            name= (TextView) view.findViewById(rit.it.team8.healthapp.R.id.tvPatientName);
+            age = (TextView) view.findViewById(rit.it.team8.healthapp.R.id.tvPatientAge);
+            disease = (TextView) view.findViewById(rit.it.team8.healthapp.R.id.tvPatientDisease);
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -57,7 +55,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.patient_list_row, parent, false);
+                .inflate(rit.it.team8.healthapp.R.layout.patient_list_row, parent, false);
 
         return new MyViewHolder(itemView);
     }

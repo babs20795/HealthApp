@@ -1,4 +1,4 @@
-package com.example.admin.healthapp;
+package rit.it.team8.healthapp;
 
 import android.content.Intent;
 import android.os.Handler;

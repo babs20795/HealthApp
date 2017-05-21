@@ -1,4 +1,4 @@
-package com.example.admin.healthapp.list.resources;
+package rit.it.team8.healthapp.list.resources;
 
 /**
  * Created by hp on 5/15/2017.

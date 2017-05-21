@@ -1,4 +1,4 @@
-package com.example.admin.healthapp.web.connector;
+package rit.it.team8.healthapp.web.connector;
 
 import android.util.Log;
 

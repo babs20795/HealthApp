@@ -1,23 +1,19 @@
-package com.example.admin.healthapp;
+package rit.it.team8.healthapp;
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.RadioButton;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.admin.healthapp.list.resources.Patient;
-import com.example.admin.healthapp.list.resources.PatientAdapter;
-import com.example.admin.healthapp.web.connector.PatientListRequest;
-import com.example.admin.healthapp.web.connector.login;
+import rit.it.team8.healthapp.list.resources.Patient;
+import rit.it.team8.healthapp.list.resources.PatientAdapter;
+import rit.it.team8.healthapp.web.connector.PatientListRequest;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

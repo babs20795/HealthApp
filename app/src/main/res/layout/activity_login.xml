@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.admin.healthapp.Login_Activity">
+    tools:context="rit.it.team8.healthapp.Login_Activity">
 
     <EditText
         android:id="@+id/editText_unm"

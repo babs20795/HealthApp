@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.admin.healthapp.Result">
+    tools:context="rit.it.team8.healthapp.Result">
 
     <TextView
         android:text="Patient Name"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical"
-    tools:context="com.example.admin.healthapp.PatientDoctorActivity">
+    tools:context="rit.it.team8.healthapp.PatientDoctorActivity">
     <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
