@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -99,4 +102,23 @@ public class PatientListActivity extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.patient_menu, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.item_refresh:
+                prepareMovieData(doctor_id);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
